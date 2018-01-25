@@ -1,0 +1,38 @@
+/* Estilos Generales */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+/* Estilos al contenedor del form */
+
+.form-container {
+    height: 290px;
+    margin-top: 5em;
+}
+
+/* Estilos a la etiqueta label */
+
+.enter-a-word {
+    font-size: 2.7em;
+    margin-bottom: 1.3em;
+}
+
+/* Estilos al input */
+
+.write-here {
+    height: 70px;
+    font-size: 1.5em;
+}
+
+/* Estilos al contenedor del button */
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
