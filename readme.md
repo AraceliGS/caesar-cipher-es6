@@ -24,7 +24,7 @@ El objetivo de este trabajo es crear una web donde el usuario escriba en un form
 
 * Hace click al botón Click Me.
 
-* Le aparece una alerta con dos opciones: una para cifrar la frase y otra para descifrala.
+* Le aparece una alerta con dos opciones: una para cifrar la frase y otra para descifrarla.
 
 * Si escoge la primera opción(cifrado de la frase), entonces le aparece un caja/contenedor con la frase cifrada.
 
