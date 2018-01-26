@@ -22,7 +22,7 @@ El objetivo de este trabajo es crear una web donde el usuario escriba en un form
 
 * El usuario escribe una frase en el formulario.
 
-* Hace click al botón Click Me
+* Hace click al botón Click Me.
 
 * Le aparece una alerta con dos opciones: una para cifrar la frase y otra para descifrala.
 
