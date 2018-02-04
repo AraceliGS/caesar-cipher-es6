@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
   // Creando función cipher
   const cipher = (str, array) => {
     // Variables locales
-    var letters = []; // ['H', 'I', 'J', 'h', 'i', 'j'] 
+    let letters = []; // ['H', 'I', 'J', 'h', 'i', 'j'] 
     let lettersArray = array;
     // Loop  
     for (let i = 0; i < lettersArray.length; i++) {
@@ -35,7 +35,7 @@ window.addEventListener('load', () => {
   // Creando función decipher
   const decipher = (str, array) => {
     // Variables locales
-    var letters2 = []; // ['A', 'B', 'C', 'a', 'b' ,'c'] 
+    let letters2 = []; // ['A', 'B', 'C', 'a', 'b' ,'c'] 
     let lettersArray2 = array;
     // Loop  
     for (let i = 0; i < lettersArray2.length; i++) {
@@ -66,13 +66,13 @@ window.addEventListener('load', () => {
   };
 
   // Preguntando al usuario
-
+  
   button.addEventListener('click', () => {
     // Variables locales
-    var word = document.getElementById('inputText').value.trim();
+    let word = document.getElementById('inputText').value.trim();
     const PATTERNSTRING = /[^0-9]/g; // Constante
-    var result = word.match(PATTERNSTRING);
-    var string = result.join('');
+    let result = word.match(PATTERNSTRING);
+    let string = result.join('');
     console.log(result);
     // Preguntando al usuario
     if (result) {
@@ -80,8 +80,12 @@ window.addEventListener('load', () => {
       let options = '1. Quieres cifrar esta frase según el código ASCII \n 2.Quieres descifrar esta frase en código ASCII.\n';
       let op = parseInt(prompt(options));
       if (op === 1) {
+        let input = document.getElementById('inputText');
+        input.value = ' ';
         cipher(string, result);
       } else {
+        let input = document.getElementById('inputText');
+        input.value = ' ';
         decipher(string, result);
       }
     }
