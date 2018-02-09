@@ -1,8 +1,8 @@
 window.addEventListener('load', () => {
   // Variables globales
-  var button = document.getElementById('button');
-  var divSection = document.getElementById('big-word-container');
-  var div = document.createElement('div');
+  let button = document.getElementById('button');
+  let divSection = document.getElementById('big-word-container');
+  let div = document.createElement('div');
   div.classList.add('word-container');
   // Creando función cipher
   const cipher = (str, array) => {
@@ -65,29 +65,36 @@ window.addEventListener('load', () => {
     return div; 
   };
 
-  // Preguntando al usuario
-  
-  button.addEventListener('click', () => {
-    // Variables locales
-    let word = document.getElementById('inputText').value.trim();
-    const PATTERNSTRING = /[^0-9]/g; // Constante
-    let result = word.match(PATTERNSTRING);
-    let string = result.join('');
-    console.log(result);
-    // Preguntando al usuario
-    if (result) {
-      // Variables declaradas en este bloque
-      let options = '1. Quieres cifrar esta frase según el código ASCII \n 2.Quieres descifrar esta frase en código ASCII.\n';
-      let op = parseInt(prompt(options));
-      if (op === 1) {
-        let input = document.getElementById('inputText');
-        input.value = ' ';
-        cipher(string, result);
-      } else {
-        let input = document.getElementById('inputText');
-        input.value = ' ';
-        decipher(string, result);
-      }
+  let inputOfLetters = document.getElementById('inputText');
+  inputOfLetters.addEventListener('input', () => {
+    if (inputOfLetters.value !== '') {
+      button.removeAttribute('disabled');
+      // Comprobando que el input no esta vacío
+      button.addEventListener('click', () => {
+      // Variables locales
+        let word = inputOfLetters.value.trim();
+        const PATTERNSTRING = /[^0-9]/g; // Constante
+        let result = word.match(PATTERNSTRING);
+        let string = result.join('');
+        console.log(result);
+        // Preguntando al usuario
+        if (result) {
+        // Variables declaradas en este bloque
+          let options = '1. Quieres cifrar esta frase según el código ASCII \n 2.Quieres descifrar esta frase en código ASCII.\n';
+          let op = parseInt(prompt(options));
+          if (op === 1) {
+            let input = document.getElementById('inputText');
+            input.value = ' ';
+            cipher(string, result);
+          } else {
+            let input = document.getElementById('inputText');
+            input.value = ' ';
+            decipher(string, result);
+          }
+        }
+      });
+    } else {
+      button.setAttribute('disabled', true);
     }
   });
 });
