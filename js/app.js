@@ -67,11 +67,11 @@ window.addEventListener('load', () => {
 
   let inputOfLetters = document.getElementById('inputText');
   inputOfLetters.addEventListener('input', () => {
-    if (inputOfLetters.value !== '') {
+    if (inputOfLetters.value !== '' && Number.isInteger(parseInt(inputOfLetters.value.trim())) === false) {
       button.removeAttribute('disabled');
       // Comprobando que el input no esta vacío
       button.addEventListener('click', () => {
-      // Variables locales
+        // Variables locales
         let word = inputOfLetters.value.trim();
         const PATTERNSTRING = /[^0-9]/g; // Constante
         let result = word.match(PATTERNSTRING);
