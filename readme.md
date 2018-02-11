@@ -13,7 +13,7 @@
 
 ## **Objetivo**
 
-El objetivo de este trabajo es crear una web donde el usuario escriba en un formulario una frase y devuelva el mismo mensaje encriptado según el algoritmo de Cifrado César con el parámetro de desplazamiento de 33 espacios hacia la derecha.
+El objetivo de este trabajo es crear una web donde el usuario escriba en un área de texto una frase en mayúscula o minúscula y que la devuelva encriptada según el algoritmo de Cifrado César con el parámetro de desplazamiento de 33 espacios hacia la derecha.
 
 ![Proyecto Cifrado César](assets/images/imagen1.JPG)
 
@@ -29,20 +29,42 @@ El objetivo de este trabajo es crear una web donde el usuario escriba en un form
 
 * Bootstrap
 
+* Código ASCII
+
 ## **Restricciones**
 
-* El algoritmo solo descifra palabras, no números.
+* Esta aplicación acepta letras, es decir no se puede escribir:
+
+  * números.
+
+  * Signos de puntuación, interrogación o exclamación.
+
+* Asimismo no introduzca palabras con tilde, ya que el algoritmo de Luhn empleado solo puedo cifrar y descifrar, gracias al código ASCII, palabras compuestas pòr las 27 letras del abecedario(no incluye ch, ñ, etc.).
+
+![Código ASCII para las letras del abecedario](assets/images/codigoascii.JPG)
+
+* Las vocales con tilde tienen un diferente código ASCII(ignorar el ```alt +```).
+
+![Código ASCII para las vocales tildadas](assets/images/codigoascii2.JPG)
+
+* No hay restricciones al introducir una palabra compuesta por letras mayúsculas y minúsculas.
 
 ## **Flujo de la Aplicación**
 
 * El usuario escribe una frase en el formulario.
 
-* Hace click al botón Click Me.
+![Paso 1](assets/images/imagen2.JPG)
 
-* Le aparece una alerta con dos opciones: una para cifrar la frase y otra para descifrarla.
+* Hace click al botón ```Click Me``` y le aparece una alerta con dos opciones: una para cifrar la frase(```opción 1```) y otra para descifrarla(```opción 2```).
 
-* Si escoge la primera opción(cifrado de la frase), entonces le aparece un caja/contenedor con la frase cifrada.
+![Paso 1](assets/images/imagen3.JPG)
 
-* Si escoge la segunda opción(descifrado de la frase), también le aparece un caja/contenedor pero con la frase descifrada.
+* Si escoge la primera opción, entonces le aparece un área de texto con la frase cifrada(```Hola ---> Ovsh```).
 
-* El usuario puede repetir el proceso cuantas veces quiera.
+![Paso 1](assets/images/imagen4.JPG)
+
+* Si escoge la segunda opción, le aparece un un área de texto con la frase descifrada(```Hola ---> Ahet```).
+
+![Paso 1](assets/images/imagen5.JPG)
+
+* El área de texto donde el usuario introdujo la frase se limpia para que pueda repetir el proceso cuantas veces quiera.
